@@ -15,3 +15,6 @@ rHelp_sum <- rHelp %.% group_by(date, gender) %.% summarise(r_helpers = n())
 plot_ <- ggplot(rHelp_sum, aes(y = r_helpers, x = date, color = gender)) + geom_line() + ggtitle("Number of unique (within month)\nposters to r-help, by gender")
 
 print(plot_)
+
+ggsave("gender.png", height = 5, width = 5)
+
